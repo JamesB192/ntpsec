@@ -3,7 +3,7 @@ build-cross:
     GIT_STRATEGY: none
     GIT_CHECKOUT: "none"
   script:
-    - tar -zcpf blob.tar.gz --exclude=blob.tar.gz --exclude=/home --exclude=/run --exclude=/dev --exclude=/proc --exclude=/sys /srv||true
+    - apt list|sed -n '/,automatic/d;/installed/p'
   tags:
     - ubuntu-1604-lts
   artifacts:
